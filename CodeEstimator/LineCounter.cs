@@ -42,7 +42,7 @@ namespace CodeEstimator
         private void RunSpecialLineCounters(string line) {
             foreach(var counter in specialLineCounters) {
                 if(counter.Count(line))
-                    break;
+                    return;
             }
         }
 

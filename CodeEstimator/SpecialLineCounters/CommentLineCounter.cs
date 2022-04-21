@@ -4,7 +4,7 @@ namespace CodeEstimator.SpecialLineCounters
 {
     public class CommentLineCounter : ISpecialLineCounter
     {
-        private string commentRegex = "//";
+        private string commentRegex = "^(\\s+)?//";
         public int LineCount { get; private set; } = 0;
 
         public string Name => "Comment";

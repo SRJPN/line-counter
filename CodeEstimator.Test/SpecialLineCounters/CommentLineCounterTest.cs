@@ -38,5 +38,15 @@ namespace CodeEstimator.Test
 
             Assert.Equal(1, lineCounter.LineCount);
         }
+
+        [Fact]
+        public void CommentLineCounter_ShouldIgnoreIfThereisCodeBeforeComment()
+        {
+            var lineCounter = new CommentLineCounter();
+
+            lineCounter.Count(" hello    // world");
+
+            Assert.Equal(0, lineCounter.LineCount);
+        }
     }
 }
