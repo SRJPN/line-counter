@@ -1,3 +1,4 @@
+using CodeEstimator.SpecialLineCounters;
 using Xunit;
 
 namespace CodeEstimator.Test

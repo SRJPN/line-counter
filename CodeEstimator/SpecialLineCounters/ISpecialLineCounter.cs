@@ -1,4 +1,4 @@
-namespace CodeEstimator
+namespace CodeEstimator.SpecialLineCounters
 {
     public interface ISpecialLineCounter
     {

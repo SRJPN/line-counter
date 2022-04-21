@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CodeEstimator.SpecialLineCounters;
 
 namespace CodeEstimator
 {

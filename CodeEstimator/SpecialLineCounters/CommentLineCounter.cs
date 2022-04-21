@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace CodeEstimator
+namespace CodeEstimator.SpecialLineCounters
 {
     public class CommentLineCounter : ISpecialLineCounter
     {
