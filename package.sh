@@ -1,1 +1,1 @@
-zip -r line-counter.zip ./CodeEstimator ./CodeEstimator.Test CodeEstimator.sln Readme.md -x "*/bin/*" -x "*obj*"
+zip -r line-counter.zip ./CodeEstimator ./CodeEstimator.Test CodeEstimator.sln Readme.md sample-input.txt -x "*/bin/*" -x "*obj*"

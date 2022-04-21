@@ -1,5 +1,12 @@
-# Lines of code estimator
+Lines of Code Estimator
+=======================
 
+* [Getting Started](#getting-started)
+    * [Running Application](#running-application)
+    * [Running Tests](#running-tests)
+* [Problem statement](#problem-statement)
+
+# Problem Statement
 Your task is to write a tool that can estimate the lines of code in a single source file. Given
 an input file, you should print:
 * Number of blank lines
@@ -48,3 +55,22 @@ Not necessary to have running code for the following requirements, but account f
 * Supporting multiple files and giving totals for an entire source tree.
 * Supporting multi-line comments.
 * Ability to add more granular breakup (eg: classify lines as imports, variable declarations, etc).
+
+# Getting Started
+
+Install dotnet core version 5 https://dotnet.microsoft.com/en-us/download/
+dotnet/5.0
+
+To install all dependancies run ` dotnet restore ` on terminal.
+
+### Running application
+
+``` shell
+    dotnet run --project CodeEstimator sample-input.txt
+```
+
+### Running Tests
+
+``` shell
+    dotnet test
+```
