@@ -12,7 +12,8 @@ namespace CodeEstimator
         {
             var specialLineCounters = new List<ISpecialLineCounter>() {
                 new CommentLineCounter(),
-                new BlankLineCounter()
+                new BlankLineCounter(),
+                new DefaultLineCounter()
             };
             this.specialLineCounters = specialLineCounters;
         }
@@ -33,7 +34,6 @@ namespace CodeEstimator
             {
                 result.Add(counter.Name, counter.LineCount);
             }
-            result.Add("Code", lines.Count() - FindSpecialLinesCount());
             result.Add("Total", lines.Count());
 
             return result;
