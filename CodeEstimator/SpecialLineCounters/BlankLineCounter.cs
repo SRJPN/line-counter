@@ -9,14 +9,16 @@ namespace CodeEstimator.SpecialLineCounters
 
         public string Name => "Blank";
 
-        public void Count(string line)
+        public bool Count(string line)
         {
             var matchCollection = Regex.Matches(line, blankLineRegex);
 
             if (matchCollection.Count > 0)
             {
                 LineCount++;
+                return true;
             }
+            return false;
         }
     }
 }

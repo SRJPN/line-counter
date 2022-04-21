@@ -13,7 +13,7 @@ namespace CodeEstimator.Test
                 new CommentLineCounter(),
                 new BlankLineCounter()
             };
-            var linesCounter = new LineCounter(specialLineCounters);
+            var linesCounter = new LineCounter();
 
             var lines = new List<string> {
                 "hello",

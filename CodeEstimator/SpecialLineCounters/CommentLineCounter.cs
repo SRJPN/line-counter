@@ -9,13 +9,15 @@ namespace CodeEstimator.SpecialLineCounters
 
         public string Name => "Comment";
 
-        public void Count(string line)
+        public bool Count(string line)
         {
             var matchCollection = Regex.Matches(line, commentRegex);
 
             if(matchCollection.Count > 0) {
                 LineCount ++;
+                return true;
             }
+            return false;
         }
     }
 }

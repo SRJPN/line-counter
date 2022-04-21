@@ -8,8 +8,12 @@ namespace CodeEstimator
     {
         private readonly IEnumerable<ISpecialLineCounter> specialLineCounters;
 
-        public LineCounter(IEnumerable<ISpecialLineCounter> specialLineCounters)
+        public LineCounter()
         {
+            var specialLineCounters = new List<ISpecialLineCounter>() {
+                new CommentLineCounter(),
+                new BlankLineCounter()
+            };
             this.specialLineCounters = specialLineCounters;
         }
 
@@ -37,7 +41,8 @@ namespace CodeEstimator
 
         private void RunSpecialLineCounters(string line) {
             foreach(var counter in specialLineCounters) {
-                counter.Count(line);
+                if(counter.Count(line))
+                    break;
             }
         }
 
