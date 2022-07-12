@@ -11,6 +11,7 @@ namespace CodeEstimator
         public LineCounter()
         {
             var specialLineCounters = new List<ISpecialLineCounter>() {
+                new CommentBlockLineCounter(),
                 new CommentLineCounter(),
                 new BlankLineCounter(),
                 new DefaultLineCounter()

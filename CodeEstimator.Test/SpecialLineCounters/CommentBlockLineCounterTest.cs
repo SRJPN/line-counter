@@ -22,7 +22,6 @@ namespace CodeEstimator.Test
             var lineCounter = new CommentBlockLineCounter();
 
             lineCounter.Count("/*");
-            lineCounter.Count("hello */");
             lineCounter.Count("world");
 
             Assert.Equal(2, lineCounter.LineCount);

@@ -9,17 +9,14 @@ namespace CodeEstimator.Test
         [Fact]
         public void LineCounter_CountsAllLines()
         {
-            var specialLineCounters = new List<ISpecialLineCounter>() {
-                new CommentLineCounter(),
-                new BlankLineCounter()
-            };
             var linesCounter = new LineCounter();
 
             var lines = new List<string> {
                 "hello",
                 "world",
-                " ",
-                "// commented line",
+                "/* ",
+                "hello // commented line",
+                "*/",
                 ""
             };
             var result = linesCounter.CountLines(lines);

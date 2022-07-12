@@ -13,33 +13,35 @@ namespace CodeEstimator.SpecialLineCounters
 
         public bool Count(string line)
         {
-            var result = false;
-            CheckIfCommentBlockStart(line);
-            if (isInCommentBlock)
+            var counted = false;
+            if (IsCommentBlockEnd(line))
             {
                 LineCount++;
-                result = true;
-            }
-            CheckIfCommentBlockEnd(line);
-            return result;
-        }
-
-        private void CheckIfCommentBlockEnd(string line)
-        {
-            var matchCollection = Regex.Matches(line, commentBlockEndRegex);
-            if (matchCollection.Count > 0)
-            {
+                counted = true;
                 isInCommentBlock = false;
             }
-        }
-
-        private void CheckIfCommentBlockStart(string line)
-        {
-            var matchCollection = Regex.Matches(line, commentBlockStartRegex);
-            if (matchCollection.Count > 0)
+            if (IsCommentBlockStart(line))
             {
                 isInCommentBlock = true;
             }
+            if (isInCommentBlock)
+            {
+                LineCount++;
+                counted = true;
+            }
+            return counted;
+        }
+
+        private bool IsCommentBlockEnd(string line)
+        {
+            var matchCollection = Regex.Matches(line, commentBlockEndRegex);
+            return matchCollection.Count > 0;
+        }
+
+        private bool IsCommentBlockStart(string line)
+        {
+            var matchCollection = Regex.Matches(line, commentBlockStartRegex);
+            return (matchCollection.Count > 0);
         }
     }
 }
